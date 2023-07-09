@@ -1,12 +1,7 @@
-import { useEffect } from 'react';
-
-
 export function Game () {
-  const wsClient = new WebSocket('ws://localhost:3000');
+  const wsClient = new WebSocket('ws://localhost:4000');
+  wsClient.onmessage = (event: MessageEvent) => {console.log(event)};
 
-  useEffect(() => {
-    wsClient.send('')
-  }, []);
-  
-  return ''
+  return <div></div>
 }
+
