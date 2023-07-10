@@ -1,8 +1,8 @@
 import { SyntheticEvent, useState } from 'react';
-import { uiTextsRu } from '../uiTexts/ru';
-import { createGame } from '../client/wsClient';
+import { uiTextsRu } from '../../uiTexts/ru';
+import { createGame } from '../../client/wsClient';
 
-export function FormCreateGame() {
+export function CreateGame() {
   const [name, setName] = useState('');
   function handle (e: SyntheticEvent){
     e.preventDefault();

@@ -9,3 +9,23 @@ export function createGame(name: string){
   });
   wsClient.send(toServer);
 }
+
+export function joinGame(name: string, code: string){
+  const toServer = JSON.stringify({
+      type: "join_game",
+      data: JSON.stringify({
+        secondPlayerName: name,
+        accessCode: code
+      })
+  });
+  wsClient.send(toServer);
+}
+
+
+export function setUpShips(gameId: number){
+  const toServer = JSON.stringify({
+      type: "set_up_ships",
+      data: JSON.stringify({gameId})
+  });
+  wsClient.send(toServer);
+}
