@@ -29,3 +29,27 @@ export function setUpShips(gameId: number){
   });
   wsClient.send(toServer);
 }
+
+
+export function startGame(markedCells: string[], gameId: number, connectionId: number) {
+  const toServer = JSON.stringify({
+    type: "start_game",
+    data: JSON.stringify({
+      gameId,
+      connectionId,
+      startMarkedCells: markedCells
+    })
+  });
+  wsClient.send(toServer);
+}
+
+export function sendAttack(attackedCell: string, gameId: number) {
+  const toServer = JSON.stringify({
+    type: "attack",
+    data: JSON.stringify({
+      gameId,
+      attackedCell
+    })
+  });
+  wsClient.send(toServer);
+}

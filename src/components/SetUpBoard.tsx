@@ -1,14 +1,17 @@
-import { useState } from 'react';
+import { SyntheticEvent, useState } from 'react';
 import { isValidMatrix } from '../utils/isValidMatrix';
 import { uiTextsRu } from '../uiTexts/ru';
-import { ShipAvailable } from '../types';
+import { startGame } from '../client/wsClient';
+import { gameSettings } from '../gameSettings';
 
-export function SetUpBoard({fieldSize, shipsAvailable}: {fieldSize: number, shipsAvailable: ShipAvailable[]}) {
+export function SetUpBoard({gameId, connectionId}: {gameId: number, connectionId: number}) {
+  gameSettings.gameId = gameId;
+  
   const [markedCells, setMarkedCells] = useState<string[]>([]);
   const [isValid, setIsValid] = useState(false);
 
   function validate(newMarkedCells: string[]) {
-    if(isValidMatrix(newMarkedCells, shipsAvailable, fieldSize)){
+    if(isValidMatrix(newMarkedCells, gameSettings.shipsAvailable, gameSettings.fieldSize)){
       setIsValid(true)
     } else {
       setIsValid(false)
@@ -31,8 +34,8 @@ export function SetUpBoard({fieldSize, shipsAvailable}: {fieldSize: number, ship
 
   const board = [];
 
-  for(let i = 0; i < fieldSize; i++) {
-    for(let j = 0; j < fieldSize; j++) {
+  for(let i = 0; i < gameSettings.fieldSize; i++) {
+    for(let j = 0; j < gameSettings.fieldSize; j++) {
       const isMarked = markedCells.includes(`${i},${j}`)
       board.push(
         <div key={`${i},${j}`}
@@ -43,11 +46,16 @@ export function SetUpBoard({fieldSize, shipsAvailable}: {fieldSize: number, ship
     }
   }
 
+  function handle(e: SyntheticEvent){
+    e.preventDefault();
+    startGame(markedCells, gameId, connectionId);
+  }
+
   return <>
     {isValid ? uiTextsRu.validShips : uiTextsRu.tip }
-    <div className='temp-board'>
+      <div className='temp-board'>
       {board}
       </div>
-      <button disabled={!isValid}>{uiTextsRu.startGame}</button>
+      <button disabled={!isValid} onClick={(e) => handle(e)}>{uiTextsRu.startGame}</button>
   </>
 }

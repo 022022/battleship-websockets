@@ -20,3 +20,15 @@
 .temp-cell-uncheck {
   border: 1px solid #eee;
 }
+
+.temp-cell-unknown {
+  border: 1px solid #eee;
+}
+
+.temp-cell-unknown::before {
+  content: '?';
+}
+
+.temp-wounded {
+  background-color: firebrick;
+}

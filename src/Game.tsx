@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AccessCodeData, StartSetupShipsData, WSMessageData } from './types';
+import { AccessCodeData, AttackResult, StartSetupShipsData, WSMessageData } from './types';
 import { Error } from './components/Error';
 import { uiTextsRu } from './uiTexts/ru';
 import { wsClient } from './client/wsClient';
@@ -7,9 +7,13 @@ import { EnterAsSecond } from './components/forms/EnterAsSecond';
 import { CreateGame } from './components/forms/CreateGame';
 import { AccessCode } from './components/AccessCode';
 import { SetUpBoard } from './components/SetUpBoard';
+import { FullScrMessage } from './components/FullSrcMessage';
+import { Playing } from './components/Playing';
+import { gameSettings } from './gameSettings';
 
 export function Game () {
   const [componentToShow, setComponentToShow] = useState(<></>);
+  const [instantMessage, setInstantMessage] = useState('');
 
   wsClient.onmessage = (event: MessageEvent<string>) => {
     const message = JSON.parse(event.data) as WSMessageData;
@@ -27,10 +31,31 @@ export function Game () {
      }
      case ('start_setup_ships'): {
       const data = JSON.parse(message.data) as StartSetupShipsData;
-      setComponentToShow(<SetUpBoard fieldSize={data.fieldSize} shipsAvailable = {data.shipsAvailable}/>)
 
+      gameSettings.fieldSize = data.fieldSize;
+      gameSettings.shipsAvailable = data.shipsAvailable;
+
+      setComponentToShow(<SetUpBoard gameId={data.gameId} connectionId={data.gameId}/>)
       break;
      }
+     case ('another_player_not_started'): {
+      const data = JSON.parse(message.data) as {anotherPlayerName: string};
+      const messageText = `${uiTextsRu.waitForAnotherPlayer} - ${data.anotherPlayerName}`;
+      setComponentToShow(<FullScrMessage message={messageText} />)
+      break;
+     }
+     case ('another_player_started'): {
+      setInstantMessage(uiTextsRu.anotherPlayerIsWaiting)
+      break;
+     }
+     case('attack_result'): {
+      setInstantMessage('');
+      const data = JSON.parse(message.data) as AttackResult;
+      setComponentToShow(<Playing data={data}/>)
+      break;
+     }
+
+
     }
 
   };
@@ -39,6 +64,11 @@ export function Game () {
     setComponentToShow(<Error message={uiTextsRu.connectionLost}/>)
   }
 
-  return componentToShow;
+  return <>
+    <div>{instantMessage}</div>
+    {componentToShow}
+  </>
+
+
 
 }
