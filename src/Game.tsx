@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AccessCodeData, WSMessageData } from './types';
+import { AccessCodeData, StartSetupShipsData, WSMessageData } from './types';
 import { Error } from './components/Error';
 import { uiTextsRu } from './uiTexts/ru';
 import { wsClient } from './client/wsClient';
@@ -26,7 +26,8 @@ export function Game () {
       break;
      }
      case ('start_setup_ships'): {
-      setComponentToShow(<SetUpBoard/>)
+      const data = JSON.parse(message.data) as StartSetupShipsData;
+      setComponentToShow(<SetUpBoard fieldSize={data.fieldSize} shipsAvailable = {data.shipsAvailable}/>)
 
       break;
      }
