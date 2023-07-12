@@ -1,4 +1,6 @@
 export const uiTextsRu = {
+  defaultName1: 'Игрок 1',
+  defaultName2: 'Игрок 2',
   enterYourName: 'Введите Ваше имя',
   createGame: 'Создать игру',
   enterAccessCode: 'Введите код доступа',
