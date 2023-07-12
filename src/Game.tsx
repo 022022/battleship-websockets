@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { AccessCodeData, AttackResult, StartSetupShipsData, WSMessageData } from './types';
+import { AccessCodeData, AttackResult, EndGameData, StartSetupShipsData, WSMessageData } from './types';
 import { Error } from './components/Error';
-import { uiTextsRu } from './uiTexts/ru';
+import { errorMessagesRu, uiTextsRu } from './uiTexts/ru';
 import { wsClient } from './client/wsClient';
 import { EnterAsSecond } from './components/forms/EnterAsSecond';
 import { CreateGame } from './components/forms/CreateGame';
@@ -10,6 +10,8 @@ import { SetUpBoard } from './components/SetUpBoard';
 import { FullScrMessage } from './components/FullSrcMessage';
 import { Playing } from './components/Playing';
 import { gameSettings } from './gameSettings';
+import { EndGame } from './components/EndGame';
+
 
 export function Game () {
   const [componentToShow, setComponentToShow] = useState(<></>);
@@ -54,14 +56,16 @@ export function Game () {
       setComponentToShow(<Playing data={data}/>)
       break;
      }
-
-
+     case('end_game'): {
+      const data = JSON.parse(message.data) as EndGameData;
+      setComponentToShow(<EndGame data={data}/>)
+      break;
+     }
     }
-
   };
 
   wsClient.onclose = () => {
-    setComponentToShow(<Error message={uiTextsRu.connectionLost}/>)
+    setComponentToShow(<Error message={errorMessagesRu.connectionLost}/>)
   }
 
   return <>

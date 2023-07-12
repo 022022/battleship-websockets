@@ -1,5 +1,4 @@
 export const uiTextsRu = {
-  connectionLost: 'Потеряна связь с сервером :(',
   enterYourName: 'Введите Ваше имя',
   createGame: 'Создать игру',
   enterAccessCode: 'Введите код доступа',
@@ -16,4 +15,10 @@ export const uiTextsRu = {
   anotherPlayerIsWaiting: 'Другой игрок уже расставил корабли и готов начать. Не заставляйте его слишком долго ждать:)',
   yourTurn: 'Ваш ход. Стреляйте, кликая по полю оппонента',
   opponentTurn: 'Ждем выстрела оппонента',
+  endGame: 'Игра завершена! Победитель: ',
+  congrats: 'Поздравляем!!!'
+}
+
+export const errorMessagesRu = {
+  connectionLost: 'Потеряна связь с сервером :(',
 }

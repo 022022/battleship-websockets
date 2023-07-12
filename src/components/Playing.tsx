@@ -2,23 +2,11 @@ import { sendAttack } from '../client/wsClient';
 import { gameSettings } from '../gameSettings';
 import { AttackResult } from '../types';
 import { uiTextsRu } from '../uiTexts/ru';
+import { playerBoard } from '../utils/playerBoard';
 
 export function Playing({data}: {data: AttackResult}){
 
-  const myBoard = [];
-
-  for(let i = 0; i < gameSettings.fieldSize; i++) {
-    for(let j = 0; j < gameSettings.fieldSize; j++) {
-      const isMarked = data.myShipCells.includes(`${i},${j}`);
-      const isWounded = data.myWoundedCells.includes(`${i},${j}`);
-      myBoard.push(
-        <div key={`${i},${j}`}
-          // onClick={() => mark(i, j, isMarked)}
-          className={isWounded ? 'temp-wounded' : (isMarked ? 'temp-cell-check' : 'temp-cell-uncheck')}>
-        </div>
-      )
-    }
-  }
+  const myBoard = playerBoard(data.myShipCells, data.myWoundedCells)
 
   const opponentBoard = [];
 

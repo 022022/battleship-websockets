@@ -27,3 +27,12 @@ export interface AttackResult {
   opponentsEmptyCells: string[],
   opponentsWoundedCells: string[],
 }
+
+export interface EndGameData {
+  isWinner: boolean,
+  winnerName: string,
+  myShipCells:  string[],
+  myWoundedCells: string[],
+  opponentsWoundedCells: string[],
+  opponentsShipCells: string[],
+}
