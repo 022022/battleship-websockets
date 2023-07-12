@@ -1,4 +1,7 @@
 export const uiTextsRu = {
+  gameHeading: 'Морской бой',
+  createGameHeading: 'Создать новую игру',
+  joinGameHeading: 'Присоединиться к игре',
   defaultName1: 'Игрок 1',
   defaultName2: 'Игрок 2',
   enterYourName: 'Введите Ваше имя',

@@ -1,0 +1,19 @@
+import { styled } from 'styled-components';
+
+export const Input = styled.input`
+  padding: 4px 8px;
+  font-size: 16px;
+  line-height: 1.5;
+  appearance: none;
+  border-radius: 4px;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  color: var(--cerulean);
+  background-color: #fff;
+  border: 1px solid var(--cerulean05);
+
+  &:focus{
+      outline: 0;
+      box-shadow: 0 0 0 0.25rem var(--cerulean05);
+      border-color: var(--cerulean);
+  }
+  `

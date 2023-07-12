@@ -1,11 +1,11 @@
-import './App.css'
 import { Game } from './Game';
+import { Global } from './styled/Global';
 
 function App() {
-  return (
-    <>
+  return (<>
+      <Global/>
       <Game></Game>
-    </>
+  </>
   )
 }
 

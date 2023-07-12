@@ -99,7 +99,7 @@ export function Game() {
 
 	return (
 		<>
-			<div>{instantMessage}</div>
+			{instantMessage}
 			{componentToShow}
 		</>
 	);
