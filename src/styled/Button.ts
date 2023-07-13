@@ -9,7 +9,7 @@ export const Button = styled.button`
     text-align: center;
     background-color: var(--cerulian005);
     border: 1px solid transparent;
-    padding: 6px 12px;
+    padding: 6px 18px;
     font-size: 1rem;
     border-radius: .25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;

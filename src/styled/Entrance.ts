@@ -14,4 +14,5 @@ export const EntranceWrapper = styled.div`
       left: calc(50% - 1px);
       width: 1px;
       height: 100%;
+    }
 `;
