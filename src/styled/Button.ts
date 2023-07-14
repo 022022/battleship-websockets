@@ -1,23 +1,22 @@
 import { styled } from 'styled-components';
 
 export const Button = styled.button`
-    cursor: pointer;
-    xoutline: 0;
     display: inline-block;
     font-weight: 400;
     line-height: 1.5;
     text-align: center;
     background-color: var(--cerulian005);
     border: 1px solid transparent;
-    padding: 6px 18px;
-    font-size: 1rem;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    padding: 8px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
     color: var(--cerulean);
     border-color: var(--cerulean);
 
     &:hover {
-      color: #fff;
+      cursor: pointer;
+      color: var(--snow);
       background-color: var(--cerulean);
       border-color: var(--cerulean);
     }
@@ -31,4 +30,13 @@ export const Button = styled.button`
     &:last-child {
       margin-top: 40px;
     }
-  `
+
+    &[disabled] {
+      background-color: var(--platinum);
+      border-color: var(--platinum);
+      color: var(--eerie-black);
+      &:hover {
+        cursor: auto;
+      }
+  }
+  `;

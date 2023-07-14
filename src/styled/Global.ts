@@ -5,6 +5,7 @@ export const Global = createGlobalStyle`
   margin: 0;
   padding: 0;
   outline: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -17,11 +18,14 @@ export const Global = createGlobalStyle`
   --crimson: #d7263dff;
   --cerulean: #086788ff;
   --cerulean05: #08678980;
+  --cerulean025: #08678940;
   --cerulian005: #0867890d;
   --giants-orange: #ed5d34ff;
   --giants-orange03: #f460334d;
   --mindaro: #c5d86dff;
   --jonquil: #f1c40fff;
+  --white005: #ffffff0d;
+  --white05: #ffffff80;
 
   --margin40: 40px;
 
@@ -35,23 +39,11 @@ export const Global = createGlobalStyle`
   padding: 2rem;
   text-align: center;
   background: var(--cerulian005);
-
 }
 
-.temp-board {
-  display: grid;
-  grid-template-columns: repeat(10, 20px);
-  grid-template-rows: repeat(10, 20px);
-}
 
-.temp-cell-check {
-  border: 1px solid #eee;
-  background-color: darkorchid;
-}
 
-.temp-cell-uncheck {
-  border: 1px solid #eee;
-}
+
 
 .temp-cell-unknown {
   border: 1px solid #eee;

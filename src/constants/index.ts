@@ -5,3 +5,10 @@ export enum GAME_STATES {
   'PLAYING' = 'playing',
   'FINISH' = 'finish',
 }
+
+export enum CELL_STATES {
+  'CHECK',
+  'UNCHECK',
+  'WOUNDED',
+  'UNKNOWN',
+}
