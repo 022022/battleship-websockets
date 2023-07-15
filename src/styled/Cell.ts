@@ -5,6 +5,7 @@ export const Cell = styled.div<{ $state: CELL_STATES; $isActive: boolean}>`
   border: ${({$state}) => $state === CELL_STATES.UNKNOWN ? `1px solid var(--cerulean05)` : `1px solid var(--white005)`};
   width: 28px;
   height: 28px;
+  border-radius: 2px;
   background: ${({$state}) => {
       switch($state) {
         case CELL_STATES.CHECK: {
