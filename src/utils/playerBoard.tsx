@@ -1,4 +1,6 @@
+import { CELL_STATES } from '../constants';
 import { gameSettings } from '../gameSettings';
+import { Cell } from '../styled/Cell';
 
 export function playerBoard(ships: string[], wounded: string[]){
   const board = [];
@@ -8,9 +10,12 @@ export function playerBoard(ships: string[], wounded: string[]){
       const isMarked = ships.includes(`${i},${j}`);
       const isWounded = wounded.includes(`${i},${j}`);
       board.push(
-        <div key={`${i},${j}`}
-          className={isWounded ? 'temp-wounded' : (isMarked ? 'temp-cell-check' : 'temp-cell-uncheck')}>
-        </div>
+        <Cell
+          $state={isWounded ? CELL_STATES.WOUNDED : (isMarked ? CELL_STATES.CHECK : CELL_STATES.UNCHECK)}
+          $isActive={false}
+          key={`${i},${j}`}
+          >
+        </Cell>
       )
     }
   }

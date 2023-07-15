@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const SetUpShips = styled.div`
+export const GameWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;

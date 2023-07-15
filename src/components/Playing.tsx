@@ -1,5 +1,11 @@
 import { sendAttack } from '../client/wsClient';
+import { CELL_STATES } from '../constants';
 import { gameSettings } from '../gameSettings';
+import { Board } from '../styled/Board';
+import { Cell } from '../styled/Cell';
+import { GameWrapper } from '../styled/GameWrapper';
+import { Instructions } from '../styled/Instructions';
+import { TwoPanelWrapper } from '../styled/TwoPanelWrapper';
 import { AttackResult } from '../types';
 import { uiTextsRu } from '../uiTexts/ru';
 import { playerBoard } from '../utils/playerBoard';
@@ -15,10 +21,13 @@ export function Playing({data}: {data: AttackResult}){
       const isMarked = data.opponentsEmptyCells.includes(`${i},${j}`);
       const isWounded = data.opponentsWoundedCells.includes(`${i},${j}`);
       opponentBoard.push(
-        <div key={`${i},${j}`}
+        <Cell
+          $state={isWounded ? CELL_STATES.WOUNDED : (isMarked ? CELL_STATES.UNCHECK : CELL_STATES.UNKNOWN)}
+          $isActive={data.myTurn}
+          key={`${i},${j}`}
           onClick={() => data.myTurn && attack(i, j)}
-          className={isWounded ? 'temp-wounded' : (isMarked ? 'temp-cell-uncheck' : 'temp-cell-unknown')}>
-        </div>
+          >
+        </Cell>
       )
     }
   }
@@ -27,15 +36,18 @@ export function Playing({data}: {data: AttackResult}){
     console.log(i, j, gameSettings.gameId)
     sendAttack(`${i},${j}`, gameSettings.gameId)
   }
-  return <>
-      <div>
+  return <GameWrapper>
+      <Instructions>
         {data.myTurn ? uiTextsRu.yourTurn : uiTextsRu.opponentTurn}
-      </div>
-      <div className='temp-board'>
-        {myBoard}
-      </div>
-      <div className='temp-board'>
-        {opponentBoard}
-      </div>
-    </>
+      </Instructions>
+      <TwoPanelWrapper $divider={false}>
+        <Board $highlight={false}>
+          {myBoard}
+        </Board>
+        <Board $highlight={data.myTurn}>
+          {opponentBoard}
+        </Board>
+      </TwoPanelWrapper>
+
+    </GameWrapper>
 }

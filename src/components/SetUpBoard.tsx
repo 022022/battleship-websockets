@@ -3,7 +3,7 @@ import { isValidMatrix } from '../utils/isValidMatrix';
 import { uiTextsRu } from '../uiTexts/ru';
 import { startGame } from '../client/wsClient';
 import { gameSettings } from '../gameSettings';
-import { SetUpShips } from '../styled/SetUpShips';
+import { GameWrapper } from '../styled/GameWrapper';
 import { Instructions } from '../styled/Instructions';
 import { TwoPanelWrapper } from '../styled/TwoPanelWrapper';
 import { Button } from '../styled/Button';
@@ -61,16 +61,16 @@ export function SetUpBoard({gameId, connectionId}: {gameId: number, connectionId
     startGame(markedCells, gameId, connectionId);
   }
 
-  return <SetUpShips>
+  return <GameWrapper>
     <Instructions>{isValid ? uiTextsRu.validShips : uiTextsRu.tip}</Instructions>
     <TwoPanelWrapper $divider={false}>
       <Stack>{gameSettings.shipsAvailable.map((ship) => <ShipInfo ship={ship}/>)}</Stack>
 
-      <Board>
+      <Board $highlight={true}>
         {board}
       </Board>
     </TwoPanelWrapper>
 
       <Button disabled={!isValid} onClick={(e: SyntheticEvent) => handle(e)}>{uiTextsRu.startGame}</Button>
-  </SetUpShips>
+  </GameWrapper>
 }
