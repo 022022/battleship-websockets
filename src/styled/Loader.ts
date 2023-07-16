@@ -9,15 +9,24 @@ const loader = keyframes`
   }
 `;
 
-export const Loader = styled.div`
-  display: block;
+export const Loader = styled.div<{$isInline: boolean}>`
+  ${({$isInline}) => $isInline ? `
+  margin: 0 20px;
+  ` : `
   margin-top: 40px;
+  `}
 
   &:after {
     content: " ";
     display: block;
+    ${({$isInline}) => $isInline ? `
+      width: 24px;
+      height: 24px;
+    ` : `
     width: 64px;
     height: 64px;
+    `}
+
     border-radius: 50%;
     border: 4px solid var(--giants-orange);
     border-color: var(--giants-orange) transparent var(--giants-orange) transparent;

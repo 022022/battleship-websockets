@@ -1,10 +1,12 @@
 import { sendAttack } from '../client/wsClient';
 import { CELL_STATES } from '../constants';
 import { gameSettings } from '../gameSettings';
+import { Bell } from '../styled/Bell';
 import { Board } from '../styled/Board';
 import { Cell } from '../styled/Cell';
 import { GameWrapper } from '../styled/GameWrapper';
 import { Instructions } from '../styled/Instructions';
+import { Loader } from '../styled/Loader';
 import { TwoPanelWrapper } from '../styled/TwoPanelWrapper';
 import { AttackResult } from '../types';
 import { uiTextsRu } from '../uiTexts/ru';
@@ -36,9 +38,12 @@ export function Playing({data}: {data: AttackResult}){
     console.log(i, j, gameSettings.gameId)
     sendAttack(`${i},${j}`, gameSettings.gameId)
   }
+
+  const instructions = data.myTurn ? <><Bell/> {uiTextsRu.yourTurn}</> : <><Loader $isInline={true}/> {uiTextsRu.opponentTurn}</>;
+
   return <GameWrapper>
       <Instructions>
-        {data.myTurn ? uiTextsRu.yourTurn : uiTextsRu.opponentTurn}
+        {instructions}
       </Instructions>
       <TwoPanelWrapper $divider={false}>
         <Board $highlight={false}>

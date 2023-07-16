@@ -4,7 +4,7 @@ import { Loader } from '../styled/Loader';
 
 export function Waiting({message}: {message: string}){
   return <FullScreenMessage>
-      <Loader/>
+      <Loader $isInline={false}/>
       <Instructions>{message}</Instructions>
     </FullScreenMessage>
 }
