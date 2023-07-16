@@ -22,6 +22,7 @@ export function CreateGame() {
       <H2>{uiTextsRu.createGameHeading}</H2>
 			<Input
 				className='form-field'
+        name='playerName'
 				type='text'
 				value={name}
 				onChange={(e: SyntheticEvent) =>

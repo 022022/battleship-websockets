@@ -30,8 +30,6 @@ export function isValidMatrix(markedCells: string[], shipsAvailable: ShipAvailab
     typeToQuantityMap.set(item.type, item.quantity);
   }
 
-  console.log('typeToQuantityMap1 -- ', typeToQuantityMap)
-
   for(let i = 0; i < matrix.length; i++) {
    for(let j = 0; j < matrix.length; j++) {
      if(matrix[i][j] === 1){
@@ -47,12 +45,8 @@ export function isValidMatrix(markedCells: string[], shipsAvailable: ShipAvailab
     }
   }
 
-  console.log('typeToQuantityMap2 -- ', typeToQuantityMap)
-
   for(const value of typeToQuantityMap.values()){
     if(value !== 0) {
-      console.log('количество кораблей не то')
-      console.log(matrix)
       return false;
     }
   }

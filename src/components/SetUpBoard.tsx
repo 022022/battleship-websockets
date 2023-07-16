@@ -64,7 +64,7 @@ export function SetUpBoard({gameId, connectionId}: {gameId: number, connectionId
   return <GameWrapper>
     <Instructions>{isValid ? uiTextsRu.validShips : uiTextsRu.tip}</Instructions>
     <TwoPanelWrapper $divider={false}>
-      <Stack>{gameSettings.shipsAvailable.map((ship) => <ShipInfo ship={ship}/>)}</Stack>
+      <Stack>{gameSettings.shipsAvailable.map((ship, i) => <ShipInfo key={i} ship={ship}/>)}</Stack>
 
       <Board $highlight={true}>
         {board}

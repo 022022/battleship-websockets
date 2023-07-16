@@ -23,7 +23,6 @@ export function Game() {
 
 	wsClient.onmessage = (event: MessageEvent<string>) => {
 		const message = JSON.parse(event.data) as WSMessageData;
-		console.log('message from server -- ', message);
 
 		switch (message.type) {
 			case 'initial_connection': {

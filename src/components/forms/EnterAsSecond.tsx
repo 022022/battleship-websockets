@@ -24,11 +24,13 @@ export function EnterAsSecond() {
       <H2>{uiTextsRu.joinGameHeading}</H2>
 			<Input
 				type='text'
+        name='playerName'
 				value={name}
 				onChange={(e: SyntheticEvent) => setName((e.target as HTMLInputElement).value)}
 			/>
 			<Input
 				type='text'
+        name='code'
 				placeholder={uiTextsRu.enterAccessCode}
 				value={code}
 				onChange={(e: SyntheticEvent) => setCode((e.target as HTMLInputElement).value)}

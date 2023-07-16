@@ -36,7 +36,6 @@ export function Playing({data}: {data: AttackResult}){
   }
 
   function attack(i: number, j: number){
-    console.log(i, j, gameSettings.gameId)
     sendAttack(`${i},${j}`, gameSettings.gameId)
   }
 
