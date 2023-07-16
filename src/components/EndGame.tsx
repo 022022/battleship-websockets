@@ -1,4 +1,5 @@
 import { Board } from '../styled/Board';
+import { BoardCaptain } from '../styled/BoardCaptain';
 import { GameWrapper } from '../styled/GameWrapper';
 import { Instructions } from '../styled/Instructions';
 import { TwoPanelWrapper } from '../styled/TwoPanelWrapper';
@@ -11,14 +12,21 @@ export function EndGame({data}: {data: EndGameData}){
   const opponentBoard = playerBoard(data.opponentsShipCells, data.opponentsWoundedCells)
 
   return <GameWrapper>
-      <Instructions>{uiTextsRu.endGame} {data.winnerName}. {data.isWinner && uiTextsRu.congrats}</Instructions>
+      <Instructions> {data.isWinner ? uiTextsRu.congrats : `${uiTextsRu.endGame} ${data.winnerName}`}</Instructions>
       <TwoPanelWrapper $divider={false}>
-        <Board $highlight={false}>
-            {myBoard}
-        </Board>
-        <Board $highlight={false}>
-            {opponentBoard}
-        </Board>
+        <div>
+          <BoardCaptain>{uiTextsRu.myShips}</BoardCaptain>
+          <Board $highlight={false}>
+              {myBoard}
+          </Board>
+        </div>
+
+        <div>
+          <BoardCaptain>{uiTextsRu.opponentShips}</BoardCaptain>
+          <Board $highlight={false}>
+              {opponentBoard}
+          </Board>
+        </div>
       </TwoPanelWrapper>
     </GameWrapper>
 }

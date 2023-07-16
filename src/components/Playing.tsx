@@ -3,6 +3,7 @@ import { CELL_STATES } from '../constants';
 import { gameSettings } from '../gameSettings';
 import { Bell } from '../styled/Bell';
 import { Board } from '../styled/Board';
+import { BoardCaptain } from '../styled/BoardCaptain';
 import { Cell } from '../styled/Cell';
 import { GameWrapper } from '../styled/GameWrapper';
 import { Instructions } from '../styled/Instructions';
@@ -46,12 +47,19 @@ export function Playing({data}: {data: AttackResult}){
         {instructions}
       </Instructions>
       <TwoPanelWrapper $divider={false}>
-        <Board $highlight={false}>
-          {myBoard}
-        </Board>
-        <Board $highlight={data.myTurn}>
-          {opponentBoard}
-        </Board>
+        <div>
+          <BoardCaptain>{uiTextsRu.myShips}</BoardCaptain>
+          <Board $highlight={false}>
+            {myBoard}
+          </Board>
+        </div>
+
+        <div>
+          <BoardCaptain>{uiTextsRu.opponentShips}</BoardCaptain>
+          <Board $highlight={data.myTurn}>
+            {opponentBoard}
+          </Board>
+        </div>
       </TwoPanelWrapper>
 
     </GameWrapper>

@@ -6,6 +6,7 @@ export const Global = createGlobalStyle`
   padding: 0;
   outline: 0;
   box-sizing: border-box;
+  color: var(--eerie-black);
 }
 
 :root {
@@ -39,21 +40,5 @@ export const Global = createGlobalStyle`
   padding: 2rem;
   text-align: center;
   background: var(--cerulian005);
-}
-
-
-
-
-
-.temp-cell-unknown {
-  border: 1px solid #eee;
-}
-
-.temp-cell-unknown::before {
-  content: '?';
-}
-
-.temp-wounded {
-  background-color: firebrick;
 }
 `

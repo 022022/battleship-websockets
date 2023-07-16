@@ -15,6 +15,7 @@ import { Playing } from './components/Playing';
 import { gameSettings } from './gameSettings';
 import { EndGame } from './components/EndGame';
 import { Entrance } from './components/Entrance';
+import { InstantMessage } from './components/InstantMessage';
 
 export function Game() {
 	const [componentToShow, setComponentToShow] = useState(<></>);
@@ -99,7 +100,7 @@ export function Game() {
 
 	return (
 		<>
-			{instantMessage}
+			{instantMessage && <InstantMessage>{instantMessage}</InstantMessage>}
 			{componentToShow}
 		</>
 	);

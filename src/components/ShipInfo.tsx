@@ -6,7 +6,7 @@ import { ShipAvailable } from '../types';
 export function ShipInfo({ship} : {ship: ShipAvailable}){
   const cells = [];
   for(let i = 0; i < ship.type; i++){
-    cells.push(<Cell $state={CELL_STATES.UNCHECK} $isActive={false}/>)
+    cells.push(<Cell key={i} $state={CELL_STATES.UNCHECK} $isActive={false}/>)
   }
 
   return <ShipInfoWrapper>
