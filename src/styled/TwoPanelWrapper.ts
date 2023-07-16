@@ -5,7 +5,7 @@ export const TwoPanelWrapper = styled.div<{ $divider: boolean;}>`
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
-    gap: 100px;
+    gap: 80px;
     flex-wrap: wrap;
     position: relative;
     &:before {

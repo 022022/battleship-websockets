@@ -13,7 +13,7 @@ export const Loader = styled.div<{$isInline: boolean}>`
   ${({$isInline}) => $isInline ? `
   margin: 0 20px;
   ` : `
-  margin-top: 40px;
+  margin-top: var(--margin40);
   `}
 
   &:after {

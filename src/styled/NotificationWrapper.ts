@@ -21,7 +21,7 @@ const moveOff = keyframes`
 export const NotificationWrapper = styled.div<{$hide: boolean}>`
     z-index: 1000;
     position: absolute;
-    padding: 20px;
+    padding: 20px 10px;
     width: 300px;
     left: calc(50% - 150px);
     border: 4px solid var(--giants-orange);

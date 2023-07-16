@@ -5,6 +5,7 @@ import { Form } from '../../styled/Form';
 import { Input } from '../../styled/Input';
 import { Button } from '../../styled/Button';
 import { H2 } from '../../styled/H2';
+import { Label } from '../../styled/Label';
 
 export function EnterAsSecond() {
 	const [name, setName] = useState(uiTextsRu.defaultName2);
@@ -22,19 +23,22 @@ export function EnterAsSecond() {
 	return (
 		<Form>
       <H2>{uiTextsRu.joinGameHeading}</H2>
-			<Input
-				type='text'
-        name='playerName'
-				value={name}
-				onChange={(e: SyntheticEvent) => setName((e.target as HTMLInputElement).value)}
-			/>
-			<Input
-				type='text'
-        name='code'
-				placeholder={uiTextsRu.enterAccessCode}
-				value={code}
-				onChange={(e: SyntheticEvent) => setCode((e.target as HTMLInputElement).value)}
-			/>
+      <Label>{uiTextsRu.enterYourName}
+        <Input
+          type='text'
+          name='playerName'
+          value={name}
+          onChange={(e: SyntheticEvent) => setName((e.target as HTMLInputElement).value)}
+        />
+      </Label>
+      <Label>{uiTextsRu.enterAccessCode}
+        <Input
+          type='text'
+          name='playerCode'
+          value={code}
+          onChange={(e: SyntheticEvent) => setCode((e.target as HTMLInputElement).value)}
+        />
+      </Label>
 			<Button onClick={(e: SyntheticEvent) => handle(e)}>{uiTextsRu.enterGame}</Button>
 		</Form>
 	);

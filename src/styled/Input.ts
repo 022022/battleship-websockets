@@ -8,8 +8,9 @@ export const Input = styled.input`
   border-radius: 8px;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   color: var(--cerulean);
-  background-color: #fff;
+  background-color: var(--snow);
   border: 1px solid var(--cerulean05);
+  text-align: center;
 
   &:focus{
       outline: 0;

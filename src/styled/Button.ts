@@ -5,7 +5,7 @@ export const Button = styled.button`
     font-weight: 400;
     line-height: 1.5;
     text-align: center;
-    background-color: var(--cerulian005);
+    background-color: var(--cerulean005);
     border: 1px solid transparent;
     padding: 8px 24px;
     font-size: 16px;
@@ -28,7 +28,7 @@ export const Button = styled.button`
     }
 
     &:last-child {
-      margin-top: 40px;
+      margin-top: var(--margin40);
     }
 
     &[disabled] {
