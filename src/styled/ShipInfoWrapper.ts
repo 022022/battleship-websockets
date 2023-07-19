@@ -6,6 +6,6 @@ export const ShipInfoWrapper = styled.div`
     & p {
       margin-right: 16px;
       font-size: larger;
-      color: var(--giants-orange);
+      color: ${({theme}) => theme.colors.accent};
     }
 `;

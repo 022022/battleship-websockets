@@ -1,17 +1,17 @@
-import { sendAttack } from '../client/wsClient';
-import { CELL_STATES } from '../constants';
-import { gameSettings } from '../gameSettings';
-import { Bell } from '../styled/Bell';
-import { Board } from '../styled/Board';
-import { BoardCaptain } from '../styled/BoardCaptain';
-import { Cell } from '../styled/Cell';
-import { GameWrapper } from '../styled/GameWrapper';
-import { Instructions } from '../styled/Instructions';
-import { Loader } from '../styled/Loader';
-import { TwoPanelWrapper } from '../styled/TwoPanelWrapper';
-import { AttackResult } from '../types';
-import { uiTextsRu } from '../uiTexts/ru';
-import { playerBoard } from '../utils/playerBoard';
+import { sendAttack } from '../../client/wsClient';
+import { CELL_STATES } from '../../constants';
+import { gameSettings } from '../../gameSettings';
+import { Bell } from '../../styled/Bell';
+import { Board } from '../../styled/Board';
+import { BoardCaptain } from '../../styled/BoardCaptain';
+import { Cell } from '../../styled/Cell';
+import { GameWrapper } from '../../styled/GameWrapper';
+import { Instructions } from '../../styled/Instructions';
+import { Loader } from '../../styled/Loader';
+import { TwoPanelWrapper } from '../../styled/TwoPanelWrapper';
+import { AttackResult } from '../../types';
+import { uiTextsRu } from '../../uiTexts/ru';
+import { playerBoard } from '../../utils/playerBoard';
 
 export function Playing({data}: {data: AttackResult}){
 

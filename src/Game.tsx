@@ -9,13 +9,13 @@ import {
 import { errorMessagesRu, uiTextsRu } from './uiTexts/ru';
 import { wsClient } from './client/wsClient';
 import { AccessCode } from './components/AccessCode';
-import { SetUpBoard } from './components/SetUpBoard';
-import { Waiting } from './components/Waiting';
-import { Playing } from './components/Playing';
+import { SetUpBoard } from './components/game/SetUpBoard';
+import { Waiting } from './components/game/Waiting';
+import { Playing } from './components/game/Playing';
 import { gameSettings } from './gameSettings';
-import { EndGame } from './components/EndGame';
+import { EndGame } from './components/game/EndGame';
 import { Entrance } from './components/Entrance';
-import { InstantMessage } from './components/InstantMessage';
+import { InstantMessage } from './components/game/InstantMessage';
 
 export function Game() {
 	const [componentToShow, setComponentToShow] = useState(<></>);

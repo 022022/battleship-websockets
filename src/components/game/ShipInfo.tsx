@@ -1,7 +1,7 @@
-import { CELL_STATES } from '../constants';
-import { Cell } from '../styled/Cell';
-import { ShipInfoWrapper } from '../styled/ShipInfoWrapper';
-import { ShipAvailable } from '../types';
+import { CELL_STATES } from '../../constants';
+import { Cell } from '../../styled/Cell';
+import { ShipInfoWrapper } from '../../styled/ShipInfoWrapper';
+import { ShipAvailable } from '../../types';
 
 export function ShipInfo({ship} : {ship: ShipAvailable}){
   const cells = [];

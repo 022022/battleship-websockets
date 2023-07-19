@@ -28,8 +28,8 @@ export const Loader = styled.div<{$isInline: boolean}>`
     `}
 
     border-radius: 50%;
-    border: 4px solid var(--giants-orange);
-    border-color: var(--giants-orange) transparent var(--giants-orange) transparent;
+    border: 4px solid ${({theme}) => theme.colors.accent};
+    border-color: ${({theme}) => theme.colors.accent} transparent ${({theme}) => theme.colors.accent} transparent;
     animation: ${loader} 2s linear infinite;
   }
 `;

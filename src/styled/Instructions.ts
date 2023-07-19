@@ -6,4 +6,5 @@ export const Instructions = styled.div`
   white-space: pre-wrap;
   display: flex;
   place-items: center;
+  color: ${({theme}) => theme.colors.text};
 `;

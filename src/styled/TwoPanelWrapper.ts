@@ -9,11 +9,11 @@ export const TwoPanelWrapper = styled.div<{ $divider: boolean;}>`
     flex-wrap: wrap;
     position: relative;
     &:before {
-      ${({$divider}) =>
+      ${({$divider, theme}) =>
         {
           if($divider) {
             return `
-              background-color: var(--giants-orange03);
+              background-color: ${theme.colors.accent03};
               content: "";
               position: absolute;
               left: calc(50% - 1px);

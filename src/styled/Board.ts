@@ -5,10 +5,10 @@ export const Board = styled.div<{$highlight: boolean}>`
   grid-template-columns: repeat(10, 28px);
   grid-template-rows: repeat(10, 28px);
   border-radius: 2px;
-  background: var(--cerulean05);
+  background: ${({theme}) => theme.colors.primary005};
 
-  ${({$highlight}) => $highlight && `
-  outline: 2px solid var(--giants-orange);
+  ${({$highlight, theme}) => $highlight && `
+  outline: 2px solid ${theme.colors.accent};
   outline-offset: 4px;
   `};
 `;

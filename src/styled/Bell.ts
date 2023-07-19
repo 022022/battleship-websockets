@@ -29,7 +29,7 @@ const bell = keyframes`
 
 export const Bell = styled.div`
   margin: 0 20px;
-  background-color: var(--giants-orange);
+  background-color: ${({theme}) => theme.colors.accent};
   width: 12px;
   height: 16px;
   border-radius: 50% 50% 0 0;
@@ -42,7 +42,7 @@ export const Bell = styled.div`
     content: ' ';
     position: absolute;
     clip-path: polygon(50% 40%, 100% 90%, 100% 100%, 0 100%, 0 90%);
-    background-color: var(--giants-orange);
+    background-color: ${({theme}) => theme.colors.accent};
     width: 16px;
     left: -2px;
     height: 18px;
@@ -56,6 +56,6 @@ export const Bell = styled.div`
     top: 120%;
     left: 4px;
     border-radius: 0 0 50% 50%;
-    background-color: var(--giants-orange);
+    background-color: ${({theme}) => theme.colors.accent};
   }
 `

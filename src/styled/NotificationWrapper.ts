@@ -24,12 +24,12 @@ export const NotificationWrapper = styled.div<{$hide: boolean}>`
     padding: 20px 10px;
     width: 300px;
     left: calc(50% - 150px);
-    border: 4px solid var(--giants-orange);
-    border-color: var(--giants-orange) transparent var(--giants-orange) transparent;
-    background: var(--snow);
-    box-shadow: 0px 4px 8px 0px var(--platinum);
+    border: 4px solid ${({theme}) => theme.colors.accent};
+    border-color: ${({theme}) => theme.colors.accent} transparent ${({theme}) => theme.colors.accent} transparent;
+    background: ${({theme}) => theme.colors.fieldsBg};
+    color: ${({theme}) => theme.colors.text};
+    box-shadow: 0px 4px 8px 0px ${({theme}) => theme.colors.neutral};
     animation-iteration-count: 1;
-
     animation: ${({$hide}) => $hide ? moveOff : moveOut} 0.7s ease-out;
 
     ${({$hide}) => {
@@ -42,9 +42,9 @@ export const NotificationWrapper = styled.div<{$hide: boolean}>`
 
     &:hover {
       cursor: pointer;
-      border-color: var(--giants-orange03) transparent var(--giants-orange03) transparent;
+      border-color: ${({theme}) => theme.colors.accent03} transparent ${({theme}) => theme.colors.accent03} transparent;
       &:after {
-        background: var(--cerulean);
+        background: ${({theme}) => theme.colors.primary};
       }
     }
 
@@ -54,7 +54,7 @@ export const NotificationWrapper = styled.div<{$hide: boolean}>`
       height: 20px;
       margin: 10px auto 0;
       display: block;
-      background: var(--giants-orange);
+      background: ${({theme}) => theme.colors.accent};
       clip-path: polygon(100% 80%, 100% 100%, 50% 70%, 0% 100%, 0 80%, 50% 50%);
     }
 `;

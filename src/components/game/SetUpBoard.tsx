@@ -1,17 +1,17 @@
 import { SyntheticEvent, useState } from 'react';
-import { isValidMatrix } from '../utils/isValidMatrix';
-import { uiTextsRu } from '../uiTexts/ru';
-import { startGame } from '../client/wsClient';
-import { gameSettings } from '../gameSettings';
-import { GameWrapper } from '../styled/GameWrapper';
-import { Instructions } from '../styled/Instructions';
-import { TwoPanelWrapper } from '../styled/TwoPanelWrapper';
-import { Button } from '../styled/Button';
-import { Board } from '../styled/Board';
-import { Cell } from '../styled/Cell';
-import { CELL_STATES } from '../constants';
+import { isValidMatrix } from '../../utils/isValidMatrix';
+import { uiTextsRu } from '../../uiTexts/ru';
+import { startGame } from '../../client/wsClient';
+import { gameSettings } from '../../gameSettings';
+import { GameWrapper } from '../../styled/GameWrapper';
+import { Instructions } from '../../styled/Instructions';
+import { TwoPanelWrapper } from '../../styled/TwoPanelWrapper';
+import { Button } from '../../styled/Button';
+import { Board } from '../../styled/Board';
+import { Cell } from '../../styled/Cell';
+import { CELL_STATES } from '../../constants';
 import { ShipInfo } from './ShipInfo';
-import { Stack } from '../styled/List';
+import { Stack } from '../../styled/List';
 
 export function SetUpBoard({gameId, connectionId}: {gameId: number, connectionId: number}) {
   gameSettings.gameId = gameId;

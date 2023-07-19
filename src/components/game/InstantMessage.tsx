@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NotificationWrapper } from '../styled/NotificationWrapper';
+import { NotificationWrapper } from '../../styled/NotificationWrapper';
 
 export function InstantMessage({children}: {children: string}) {
   const [hide, setHide] = useState(false);

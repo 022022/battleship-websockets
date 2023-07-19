@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Board } from '../styled/Board';
-import { BoardCaptain } from '../styled/BoardCaptain';
-import { GameWrapper } from '../styled/GameWrapper';
-import { Instructions } from '../styled/Instructions';
-import { TwoPanelWrapper } from '../styled/TwoPanelWrapper';
-import { EndGameData } from '../types';
-import { uiTextsRu } from '../uiTexts/ru';
-import { playerBoard } from '../utils/playerBoard';
+import { Board } from '../../styled/Board';
+import { BoardCaptain } from '../../styled/BoardCaptain';
+import { GameWrapper } from '../../styled/GameWrapper';
+import { Instructions } from '../../styled/Instructions';
+import { TwoPanelWrapper } from '../../styled/TwoPanelWrapper';
+import { EndGameData } from '../../types';
+import { uiTextsRu } from '../../uiTexts/ru';
+import { playerBoard } from '../../utils/playerBoard';
 import Confetti from 'react-confetti';
 
 export function EndGame({data}: {data: EndGameData}){

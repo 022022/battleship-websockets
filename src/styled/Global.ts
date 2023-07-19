@@ -1,12 +1,12 @@
 import {createGlobalStyle } from 'styled-components';
+import { Theme } from '../types/styled';
 
-export const Global = createGlobalStyle`
+export const Global = createGlobalStyle<{theme: Theme}>`
 * {
   margin: 0;
   padding: 0;
   outline: 0;
   box-sizing: border-box;
-  color: var(--eerie-black);
 }
 
 :root {
@@ -21,7 +21,19 @@ export const Global = createGlobalStyle`
   --giants-orange03: #f460334d;
   --white005: #ffffff0d;
   --white05: #ffffff80;
+
+  --black: #001117;
+  --dark005: #0000000d;
+  --dark05: #00000080;
+  --gunmetal: #002836ff;
+  --coral: #ff8552ff;
+  --flash-white: #bfccd0ff;
+  --moonstone: #01A7C2ff;
+  --moonstone05: #01A7C280;
+  --moonstone025: #01A7C240;
+
   --margin40: 40px;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   box-sizing: border-box;
@@ -31,6 +43,6 @@ export const Global = createGlobalStyle`
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background: var(--cerulean005);
+  background: ${({theme}) => theme.colors.bg}
 }
-`
+`;

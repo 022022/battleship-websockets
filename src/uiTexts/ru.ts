@@ -29,7 +29,8 @@ export const uiTextsRu = {
   Вы не успели подбить все корабли оппонента:(
   Победитель - `,
   congrats: 'Игра завершилась Вашей победой! Поздравляем!!!',
-  goBack: 'Назад',
+  switchToDark: 'Темная тема',
+  switchToLight: 'Светлая тема',
 }
 
 export const errorMessagesRu = {
