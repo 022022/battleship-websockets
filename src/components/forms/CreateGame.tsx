@@ -4,9 +4,8 @@ import { createGame } from '../../client/wsClient';
 import { Form } from '../../styled/Form';
 import { Button } from '../../styled/Button';
 import { Input } from '../../styled/Input';
-import { H2 } from '../../styled/H2';
-import { BoardCaptain } from '../../styled/BoardCaptain';
 import { Label } from '../../styled/Label';
+import { FormHeading } from '../../styled/FormHeading';
 
 export function CreateGame() {
 	const [name, setName] = useState(uiTextsRu.defaultName1);
@@ -21,7 +20,7 @@ export function CreateGame() {
 
 	return (
 		<Form>
-      <H2>{uiTextsRu.createGameHeading}</H2>
+      <FormHeading>{uiTextsRu.createGameHeading}</FormHeading>
       <Label>{uiTextsRu.enterYourName}
         <Input
           className='form-field'

@@ -4,7 +4,7 @@ import { joinGame } from '../../client/wsClient';
 import { Form } from '../../styled/Form';
 import { Input } from '../../styled/Input';
 import { Button } from '../../styled/Button';
-import { H2 } from '../../styled/H2';
+import { FormHeading } from '../../styled/FormHeading';
 import { Label } from '../../styled/Label';
 
 export function EnterAsSecond() {
@@ -22,7 +22,7 @@ export function EnterAsSecond() {
 
 	return (
 		<Form>
-      <H2>{uiTextsRu.joinGameHeading}</H2>
+      <FormHeading>{uiTextsRu.joinGameHeading}</FormHeading>
       <Label>{uiTextsRu.enterYourName}
         <Input
           type='text'

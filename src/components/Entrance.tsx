@@ -1,14 +1,12 @@
 import { CreateGame } from './forms/CreateGame';
 import { EnterAsSecond } from './forms/EnterAsSecond';
 import { TwoPanelWrapper } from '../styled/TwoPanelWrapper';
-import { H1 } from '../styled/H1';
+import { HeroHeading } from '../styled/HeroHeading';
 import { uiTextsRu } from '../uiTexts/ru';
 
-
 export function Entrance(){
-
   return<>
-    <H1>{uiTextsRu.gameHeading}</H1>
+    <HeroHeading>{uiTextsRu.gameHeading}</HeroHeading>
     <TwoPanelWrapper $divider={true}>
       <CreateGame />
       <EnterAsSecond />
