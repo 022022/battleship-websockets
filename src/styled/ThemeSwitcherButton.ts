@@ -1,16 +1,21 @@
 import { styled } from 'styled-components';
-import { ThemeType } from '../types/styled';
 
-export const ThemeSwitcherButton = styled.button<{$direction: ThemeType}>`
-    display: inline-block;
+export const ThemeSwitcherButton = styled.button`
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     font-weight: 400;
     line-height: 1.5;
-    text-align: center;
-    background-color: ${({theme}) => theme.colors.primary005};
+
+    background: transparent;
     border: none;
-    padding: 4px 16px;
+    border-radius: 50%;
+
     font-size: 14px;
-    border-radius: 8px;
+
     transition: 0.3s ease-in-out;
     color: ${({theme}) => theme.colors.primary};
     position: relative;
@@ -19,10 +24,10 @@ export const ThemeSwitcherButton = styled.button<{$direction: ThemeType}>`
       cursor: pointer;
       color: ${({theme}) => theme.colors.fieldsBg};
       background-color: ${({theme}) => theme.colors.primary};
-      border-radius: 8px;
+      border-radius: 50%;
     }
 
-    &:focus {
+    &:focus-visible {
       outline: 0;
       box-shadow: 0 0 0 0.25rem ${({theme}) => theme.colors.primary05};
       border-color: ${({theme}) => theme.colors.primary};

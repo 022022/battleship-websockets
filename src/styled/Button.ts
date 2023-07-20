@@ -33,7 +33,7 @@ export const Button = styled.button`
     &[disabled] {
       background-color: ${({theme}) => theme.colors.neutral};
       border-color: ${({theme}) => theme.colors.neutral};
-      color: ${({theme}) => theme.colors.neutral};
+      color: ${({theme}) => theme.colors.text};
       &:hover {
         cursor: auto;
       }
