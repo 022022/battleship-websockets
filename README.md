@@ -11,7 +11,7 @@ React, TypeScript, Vite, WebSocket (ws), styled-components
 
 Код: https://github.com/022022/battleship-websockets
 
-Приложение: https://main--battleship-websockets-client.netlify.app/
+Приложение: https://battleship-websockets-client.netlify.app/
 
 ## Сервер ##
 
