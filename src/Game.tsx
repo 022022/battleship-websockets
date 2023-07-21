@@ -83,6 +83,10 @@ export function Game() {
 				setComponentToShow(<EndGame data={data} />);
 				break;
 			}
+      case 'another_player_disconnected': {
+        setInstantMessage(errorMessagesRu.anotherPlayerDisconnected);
+        break;
+      }
       default: {
         setInstantMessage(errorMessagesRu.defaultError);
         setComponentToShow(<></>);

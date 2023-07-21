@@ -1,5 +1,4 @@
 import { DefaultTheme } from 'styled-components/dist/types';
-import { uiTextsRu } from '../uiTexts/ru';
 import { lightTheme } from '../styled/themes/lightTheme';
 import { SyntheticEvent } from 'react';
 import { darkTheme } from '../styled/themes/darkTheme';
