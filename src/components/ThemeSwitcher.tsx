@@ -3,6 +3,7 @@ import { lightTheme } from '../styled/themes/lightTheme';
 import { SyntheticEvent } from 'react';
 import { darkTheme } from '../styled/themes/darkTheme';
 import { ThemeSwitcherButton } from '../styled/ThemeSwitcherButton';
+import { uiTextsRu } from '../uiTexts/ru';
 
 export function ThemeSwitcher({theme, switchTheme}: {theme: DefaultTheme, switchTheme: (newTheme: DefaultTheme) => void}){
   function handle(e: SyntheticEvent){
@@ -47,11 +48,11 @@ export function ThemeSwitcher({theme, switchTheme}: {theme: DefaultTheme, switch
 
   if(theme === lightTheme){
     return <>
-      <ThemeSwitcherButton onClick={(e: SyntheticEvent) => handle(e)}>{svgMoon}</ThemeSwitcherButton>
+      <ThemeSwitcherButton aria-label={uiTextsRu.switchToDark} onClick={(e: SyntheticEvent) => handle(e)}>{svgMoon}</ThemeSwitcherButton>
     </>
   } else {
     return <>
-      <ThemeSwitcherButton onClick={(e: SyntheticEvent) => handle(e)}>{svgSun}</ThemeSwitcherButton>
+      <ThemeSwitcherButton aria-label={uiTextsRu.switchToLight} onClick={(e: SyntheticEvent) => handle(e)}>{svgSun}</ThemeSwitcherButton>
     </>
   }
 
