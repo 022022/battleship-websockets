@@ -20,10 +20,10 @@ const moveOff = keyframes`
 
 export const NotificationWrapper = styled.div<{$hide: boolean}>`
     z-index: 1000;
-    position: absolute;
+    position: fixed;
     padding: 20px 10px;
-    width: 300px;
-    left: calc(50% - 150px);
+    width: 280px;
+    left: calc(50% - 140px);
     border: 4px solid ${({theme}) => theme.colors.accent};
     border-color: ${({theme}) => theme.colors.accent} transparent ${({theme}) => theme.colors.accent} transparent;
     background: ${({theme}) => theme.colors.fieldsBg};

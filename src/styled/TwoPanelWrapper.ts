@@ -8,6 +8,7 @@ export const TwoPanelWrapper = styled.div<{ $divider: boolean;}>`
     gap: 80px;
     flex-wrap: wrap;
     position: relative;
+
     &:before {
       ${({$divider, theme}) =>
         {
@@ -24,4 +25,11 @@ export const TwoPanelWrapper = styled.div<{ $divider: boolean;}>`
           }
         }
       }
+
+    @media (max-width: 767px) {
+      &:before {
+                background: none;
+        }
+    }
+
 `;

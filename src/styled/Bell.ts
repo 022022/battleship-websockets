@@ -30,7 +30,7 @@ const bell = keyframes`
 export const Bell = styled.div`
   margin: 0 20px;
   background-color: ${({theme}) => theme.colors.accent};
-  width: 12px;
+  min-width: 12px;
   height: 16px;
   border-radius: 50% 50% 0 0;
   position: relative;
