@@ -1,10 +1,9 @@
 # Игра «Морской бой» WebSockets
 
-## Демо-видео ##
-https://youtu.be/DJI-_J6HbDM
-
 <img width="911" alt="image" src="https://github.com/022022/battleship-websockets/assets/99475472/4f2adac7-2efc-4e42-a7a5-b6bc8754b7fe"> 
 
+## Демо-видео ##
+https://youtu.be/DJI-_J6HbDM
 
 ## Клиент ##
 React, TypeScript, Vite, WebSocket (ws), styled-components
