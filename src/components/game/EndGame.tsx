@@ -13,15 +13,19 @@ export function EndGame({data}: {data: EndGameData}){
   const myBoard = playerBoard(data.myShipCells, data.myWoundedCells);
   const opponentBoard = playerBoard(data.opponentsShipCells, data.opponentsWoundedCells);
 
-  const [confetti, setConfetti] = useState(200);
+  const [confettiQuantity, setConfettiQuantity] = useState(200);
+  const [height, setHeight] = useState(0);
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    const confettiTimer = setTimeout(() => setConfetti(0), 3000);
+    setHeight(document.documentElement.scrollHeight);
+    setWidth(document.documentElement.scrollWidth - 20);
+    const confettiTimer = setTimeout(() => setConfettiQuantity(0), 3000);
     return () => {clearTimeout(confettiTimer)};
   }, [])
 
   return <GameWrapper>
-      {data.isWinner && <Confetti numberOfPieces={confetti} />}
+      {data.isWinner && <Confetti numberOfPieces={confettiQuantity} height={height} width={width}/>}
       <Instructions> {data.isWinner ? uiTextsRu.congrats : `${uiTextsRu.endGame} ${data.winnerName}`}</Instructions>
       <TwoPanelWrapper $divider={false}>
         <div>
