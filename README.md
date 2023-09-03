@@ -28,6 +28,7 @@ Node.js, TypeScript, WebSocket (ws)
 `npm run start:dev`
 
 # Схема запросов #
-![Scheme](https://github.com/022022/battleship-websockets/assets/99475472/a36b2566-7e08-4e78-8281-7b02c76ed4d5)
+![Scheme](https://github.com/022022/battleship-websockets/assets/99475472/ad233c3e-7a0c-4c86-909a-2fe7684c3b1d)
+
 
 
